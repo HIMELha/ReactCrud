@@ -1,0 +1,290 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  background: linear-gradient(
+    190deg,
+    #ffffff,
+    rgb(194, 241, 253),
+    rgb(253, 228, 228)
+  );
+}
+
+.container {
+  max-width: 1000px;
+  margin: 4px auto;
+  padding: 10px 16px;
+}
+.container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 2%;
+  background: rgb(16, 2, 78);
+  border-radius: 5px;
+}
+.container header h2 {
+  text-transform: uppercase;
+  color: rgb(120, 206, 255);
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.flex-gap {
+  display: flex;
+  gap: 7px;
+}
+.text-start {
+  text-align: start;
+}
+.btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 2px;
+  background: linear-gradient(70deg, #2d97fa, #414aee);
+  color: #fff;
+}
+.btn i {
+  margin-right: 5px;
+}
+.btn:hover {
+  cursor: pointer;
+  background: linear-gradient(70deg, #13bfd6, #7b82ff);
+}
+.btn:focus {
+  outline: 1px solid rgb(0, 255, 234);
+}
+.btn2 {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 2px;
+  background: linear-gradient(70deg, #db3e95, rgb(216, 38, 97));
+  color: #fff;
+}
+.btn2 i {
+  margin-right: 5px;
+}
+.btn2:hover {
+  cursor: pointer;
+  background: linear-gradient(130deg, rgb(216, 38, 97), #d8358f);
+}
+.btn2:focus {
+  outline: 1px solid rgb(245, 147, 232);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 2%;
+  margin-top: 10px;
+}
+
+nav .search input {
+  padding: 8px 11px;
+  font-size: 14px;
+  border-radius: 2px;
+  border: 1px solid skyblue;
+  background: linear-gradient(180deg, #3398f7, #686eda);
+  color: #fff;
+}
+nav .search input::placeholder {
+  color: #fff;
+}
+nav .search input:focus {
+  outline: 1px solid rgb(96, 210, 255);
+}
+
+.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table {
+  margin-top: 5px;
+  padding: 10px 0;
+  overflow: auto;
+}
+.table h3 {
+  padding-left: 2%;
+  color: #0008a0;
+  font-size: 17px;
+  font-family: monospace;
+}
+
+.table > table {
+  margin-top: 15px;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 5px;
+}
+
+table thead th {
+  background: rgb(236, 236, 236);
+  color: #010335;
+  padding: 8px 9px;
+  font-size: 14px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table tbody tr td {
+  background: rgb(255, 255, 255);
+  color: #2e2e35;
+  padding: 7px 9px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
+
+.pending {
+  color: rgb(230, 111, 0);
+}
+.pending i {
+  margin-right: 4px;
+}
+
+.proccessing {
+  color: rgb(0, 196, 230);
+}
+.proccessing i {
+  margin-right: 4px;
+  animation: Rotate 0.5s linear infinite;
+}
+
+@keyframes Rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.completed {
+  color: rgb(0, 167, 14);
+}
+.completed i {
+  margin-right: 4px;
+}
+
+/* Taskform page css */
+.TaskForm {
+  width: 450px;
+  margin: 8px auto;
+  padding: 10px 12px;
+  box-shadow: 1px 2px 6px #e2bfff, 2px 2px #535bf2, 4px 5px #13bfd6;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.TaskForm h3 {
+  font-size: 18px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form label {
+  color: #010335;
+  font-size: 14px;
+  padding: 3px 0;
+}
+
+.form input,
+textarea,
+select {
+  color: #010335;
+  font-size: 14px;
+  padding: 5px 8px;
+  border: 1px solid #13bfd6;
+  background: transparent;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 90px;
+}
+
+.form input:focus,
+textarea:focus,
+select:focus {
+  outline: 1px solid #535bf2;
+}
+
+.TaskForm .btn2 {
+  margin-top: 10px;
+}
+
+footer {
+  margin-top: 12px;
+  padding: 12px 2%;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(280deg,rgb(33, 14, 73), rgb(13, 0, 48));
+  border-radius: 6px;
+}
+
+footer span {
+  color: #ffffff;
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+footer a {
+  color: #13bfd6;
+}
+@media screen and (max-width: 600px) {
+  body {
+    height: auto;
+  }
+  .container {
+    margin: 5px auto;
+    padding: 0 5px;
+  }
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav .search input {
+    width: 50%;
+  }
+  nav .btn i {
+    margin: 0;
+  }
+  nav .btn span {
+    display: none;
+  }
+  table {
+    width: 800px !important;
+  }
+
+  .TaskForm {
+    width: 96%;
+    margin: 8px auto;
+  }
+}
