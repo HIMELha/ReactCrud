@@ -91,7 +91,12 @@ body {
 .btn2:focus {
   outline: 1px solid rgb(245, 147, 232);
 }
-
+.red {
+  color: rgb(233, 85, 85);
+}
+.sky {
+  color: #13bfd6;
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -256,6 +261,7 @@ footer span {
 }
 footer a {
   color: #13bfd6;
+  font-size: 14px;
 }
 @media screen and (max-width: 600px) {
   body {

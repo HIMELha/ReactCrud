@@ -7,9 +7,13 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function tasks(){
-        $tasks = Task::latest('id')->get();
-
+    public function tasks($name = null){
+        if($name){
+            $tasks = Task::where('name', 'like', '%'.$name.'%')->get();
+        }else{
+            $tasks = Task::latest('id')->get();
+        }
+        
         return response()->json([
             'tasks' => $tasks
         ]);

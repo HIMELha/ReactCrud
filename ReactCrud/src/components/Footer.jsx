@@ -2,10 +2,13 @@
 function Footer() {
     return (
       <footer>
-        <span>Simple Task App using Laravel and React</span>
+        <span>
+          Simple Task App using <i className="fa-brands fa-laravel red"></i> and{" "}
+          <i className="sky fa-brands fa-react"></i>
+        </span>
 
         <a href="https://webhimel.com">
-          Created by Webhimel with ☠
+          <i className="fa-brands fa-waze"></i>{" "}Created by Webhimel
         </a>
       </footer>
     );
