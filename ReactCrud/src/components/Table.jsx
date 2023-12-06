@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import http from "../http";
+import { toast } from "react-toastify";
 
 function Table() {
   const [taske, setTaske] = useState([]);
@@ -8,7 +9,6 @@ function Table() {
   useEffect(() => {
     fetchAllTask();
   }, []);
-
   const fetchAllTask = () => {
     http.get("tasks").then((res) => {
       setTaske(res.data.tasks);
@@ -18,6 +18,7 @@ function Table() {
 
   return (
     <div className="table">
+      
       <h3>Showing {taske.length} results</h3>
 
       <table>
@@ -65,7 +66,7 @@ function Table() {
                 </span>
               </td>
               <td className="flex-gap text-center">
-                <Link to={{ pathname: '/task/'+task.id }} >
+                <Link to={{ pathname: "/task/" + task.id }}>
                   <button className="btn">View</button>
                 </Link>
                 <Link to={{ pathname: "edit/" + task.id }}>
@@ -78,6 +79,7 @@ function Table() {
                     http.delete("/delete/" + task.id).then(() => {
                       console.log("deleted");
                       fetchAllTask();
+                      toast.success("Task deleted successfully");
                     });
                   }}
                 >

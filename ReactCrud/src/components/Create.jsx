@@ -1,6 +1,7 @@
 import { useState } from "react";
 import http from "../http";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Create() {
   const navigator = useNavigate();
@@ -22,6 +23,9 @@ function Create() {
     e.preventDefault();
     http.post("/store", data).then(() => {
       navigator("/");
+      toast.success('Task created successfully')
+    }).catch(() => {
+       toast.error('Please fill all required fields');
     });
   };
   return (
@@ -49,7 +53,7 @@ function Create() {
         <div className="form">
           <label htmlFor="deadline">Deadline</label>
           <input
-            type="datetime-local"
+            type="date"
             onChange={handleChange}
             name="deadline"
             value={data.deadline}

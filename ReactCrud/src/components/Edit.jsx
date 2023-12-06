@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import http from "../http";
 import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 function Edit() {
   const params = useParams();
   const [data, setData] = useState({
@@ -32,6 +33,7 @@ function Edit() {
     http.put("/update/"+params.id, data).then((res) => {
       if (res.data.status == true) {
         navigator("/");
+        toast.info("Task updated successfully");
       }
     });
   };
@@ -60,7 +62,7 @@ function Edit() {
         <div className="form">
           <label htmlFor="deadline">Deadline</label>
           <input
-            type="datetime-local"
+            type="date"
             onChange={handleChange}
             value={data.deadline}
             name="deadline"

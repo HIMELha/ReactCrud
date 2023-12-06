@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import http from '../http';
 function Navbar() {
   const SearchBtn = {
     padding: "9px 13px",
@@ -13,10 +14,23 @@ function Navbar() {
       navigator("/create");
     }
   };
+  const handleSearch = (event) => {
+    event.preventDefault();
+
+    let name = event.target.value;
+    http.get("tasks/" + name).then((res) => {
+      console.log(res.data.tasks)
+    });
+  };
   return (
     <nav>
       <div className="search">
-        <input type="text" name="search" placeholder="Search a task" />
+        <input
+          type="text"
+          name="search"
+          onChange={handleSearch}
+          placeholder="Search a task"
+        />
         <button className="btn" style={SearchBtn}>
           <i className="fa-solid fa-magnifying-glass"></i>
         </button>
